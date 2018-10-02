@@ -1,0 +1,395 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "fonts";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+		-moz-border-radius: $radius;
+			-ms-border-radius: $radius;
+				-o-border-radius: $radius;
+					border-radius: $radius;	
+}
+
+@mixin rotate($degrees) {
+    -webkit-transform: rotate($degrees);
+    	-moz-transform: rotate($degrees);
+    		-ms-transform: rotate($degrees);
+    			-o-transform: rotate($degrees);
+    				transform: rotate($degrees);
+ }
+
+body {
+	font-family: "Univers LT";
+	color: rgb(64, 64, 64);
+}
+
+a {
+	text-decoration: none;
+}
+
+header {
+	height: 650px;
+	background: url("../images/background.jpg") no-repeat;
+	background-size: cover;
+
+	h1,
+	p {
+		color: rgb(255, 255, 255);
+		text-align: center;
+	}
+
+	h1 {
+		font-family: "Alte Haas Grotesk";
+		font-size: 4.3rem;
+		padding-top: 28%;
+		padding-bottom: 2%;
+	}
+
+	p {
+		font-size: 1.5rem;
+	}
+
+	button {
+		font-family: "Segoe UI";
+		font-size: 1.2rem;
+		color: rgb(255, 255, 255);
+		text-align: center;
+		margin-right: 10%;
+		padding-bottom: 5px;
+		padding-left: 25px;
+		width: 90px;
+		height: 30px;
+		border: none;
+		@include border-radius(3px);
+		background: rgb(222, 108, 110) url("../images/shape.png") 20% no-repeat;
+			&:hover {
+				cursor: pointer;
+				background: rgb(108, 222, 197) url("../images/shape.png") 20% no-repeat;
+			}
+	}
+}
+
+#logo {
+	font-family: "Lavanderia";
+	font-size: 3rem;
+	margin-left: 12%;
+
+	a {
+		color: rgb(33, 33, 33);
+
+		span {
+			color: rgb(222, 108, 110);
+		}
+	}
+}
+
+#mainNav {
+	height: 90px;
+	background-color: rgba(255, 255, 255, 0.9);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+nav {
+	font-family: "Segoe UI";
+	font-size: 1.1rem;
+	margin-left: 20%;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { 
+  	display: inline-block; 
+  }
+
+  a {
+  	color: rgb(69, 69, 69);
+    display: block;
+    padding: 0 15px;
+  }
+}
+
+.circles {
+	position: relative;
+	width: 300px;
+	height: 300px;
+	margin: -30% auto;
+
+	#circle1,
+	#circle2,
+	#circle3 {
+		position: absolute;
+		background: rgba(255, 255, 255, 0.5);
+		@include border-radius(50%);
+		z-index: 10;
+	}
+
+	#circle1 {
+		width: 120px;
+		height: 120px;
+		bottom: 60px;
+		left: 100px;	
+	}
+
+	#circle2 {
+		width: 100px;
+		height: 100px;
+		top: 80px;
+		right: 50px;
+	}
+
+	#circle3 {
+		width: 80px;
+		height: 80px;
+		bottom: 80px;
+		right: 40px;
+	}
+}
+
+section:first-child {
+	position: relative;
+	padding: 5% 10% 2% 10%;
+	border-bottom: 2px solid rgb(229, 229, 229);
+
+	h2 {
+	text-align: center;
+	font-size: 2rem;
+	color: rgb(64, 64, 64);
+	}
+
+	p {
+		font-size: 1rem;
+		line-height: 1.3rem;
+		color: rgb(99, 99, 99);
+		text-align: center;
+		margin: 3% 11% 5% 11%;
+	}
+
+	figure {
+		display: inline-block;
+		position: relative;
+		width: 180px;
+		height: 180px;
+		line-height: 180px;
+		@include border-radius(50%);
+		margin: 3%;
+
+		i {
+			display: block;
+			position: absolute;
+			font-size: 5rem;
+			color: rgb(255, 255, 255);
+			top: 50px;
+			left: 50px;
+		}
+
+		figcaption {
+			font-size: 1.1rem;
+			font-weight: bold;
+			color: rgba(255, 255, 255, 0.6);
+			text-align: center;
+			margin-top: 55px;
+		}
+	}
+
+	#blue {
+		background: rgb(77, 185, 243);
+
+		i {
+			font-size: 4rem;
+			left: 55px;
+		}
+
+		i:first-of-type {
+			background: rgb(77, 185, 243);
+			@include rotate(135deg);
+			top: 50px;
+			z-index: 5;
+		}
+
+		i:nth-child(2) {
+			top: 70px;
+			background: rgba(77, 185, 243, 0.6);
+			z-index: 10;
+		}
+	}
+
+	#green {
+		background: rgb(111, 193, 37);
+	}
+
+	#red {
+		background: rgb(255, 85, 73);
+		z-index: -5;
+
+		i:first-of-type {
+			font-size: 2rem;
+			color: rgba(255, 255, 255, 0.2);
+			top: 20px;
+			left: 70px;
+		}
+
+		i:nth-child(2) {
+			font-size: 5rem;
+			color: rgba(255, 255, 255, 0.2);
+			top: 50px;
+			left: 65px;
+		}
+
+		figcaption {
+			color: rgba(255, 255, 255, 0.2);
+		}
+	}
+
+	#outerLayer {
+		width: 150px;
+		height: 150px;
+		@include border-radius(50%);
+		font-size: 0.8rem;
+		line-height: 1rem;
+		color: rgba(255, 255, 255, 0.6);
+		text-align: center;
+		float: right;
+		margin-top: -170px;
+		margin-right: 320px;
+		z-index: 5;
+	}
+
+	#orange {
+		background: rgb(227, 143, 35);
+
+		i {
+			font-size: 4rem;
+			background: rgb(227, 143, 35);	
+		}
+
+		i:first-of-type {
+			@include rotate(270deg);
+			top: 65px;
+			left: 70px;
+			z-index: 5;	
+		}
+
+		i:nth-child(2) {
+			font-size: 4.5rem;
+			top: 45px;
+			left: 55px;
+			z-index: 10;
+		}
+	}
+}
+
+section {
+	padding: 2% 10% 0 10%;
+
+	article {
+		height: 140px;
+		margin: 1% 4% 8% 3%;
+
+		h3 {
+			font-size: 1.6rem;
+			line-height: 2.2rem;
+			vertical-align: bottom;
+			margin-bottom: 1%;
+		}
+
+		p {
+			font-size: 0.9rem;
+			color: rgb(139, 139, 139);
+			text-align: left;
+			line-height: 1.3rem;
+		}
+
+		img {
+			width: 200px;
+			height: 132px;
+			float: left;
+			margin-right: 3%;
+		}
+	}
+}
+
+footer {
+	height: 220px;
+	background: url("../images/footer_background.png") no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 3% 8% 2% 12%;
+
+	h4 {
+		font-size: 1.2rem;
+		font-weight: normal;
+		color: rgb(174, 174, 174);
+	}
+
+	ul {
+		margin-top: 2rem;
+
+		a {
+		font-size: 0.9rem;
+		line-height: 1.5rem;
+		color: rgb(139, 139, 139);
+		}
+	}
+	
+	p {
+		font-size: 0.8rem;
+		color: rgb(139, 139, 139);
+	}
+
+	.subMenu1 {
+		padding-right: 7%;
+	}
+
+	.subMenu2 {
+		padding-right: 5%;
+	}
+
+	.subMenu3 {
+		padding-right: 3%;
+	}
+
+	.icons {
+	position: relative;
+	width: 300px;
+	height: 200px;
+
+		a {
+			display: inline-block;
+			background: rgb(105, 107, 105);
+			width: 55px;
+			height: 55px;
+			line-height: 55px;
+			@include border-radius(50%);
+			text-align: center;
+			margin: 5% 2% 10% 2%;
+		}
+
+		i {
+		font-size: 2rem;
+		color: rgb(38, 38, 38);
+		vertical-align: middle;
+		}
+
+		p {
+			margin-top: 10%;
+			font-size: 0.9rem;
+		}
+	}
+}
